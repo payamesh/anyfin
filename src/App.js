@@ -49,7 +49,7 @@ function App() {
               ) => (
                 <Country
                   key={country.name}
-                  sek={currencies.rates.SEK} //get the rate for sek
+                  sek={currencies ? currencies.rates.SEK : 10.62} //get the rate for sek
                   country={country}
                   countryCurrency={
                     currencies.rates[country?.currencies[0]?.code]

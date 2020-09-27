@@ -7,7 +7,7 @@ function App() {
   const [currencies, setCurrencies] = useState();
   const [searchWord, setSearchWord] = useState("");
   const [searchResult, setSearchResult] = useState([]);
-  const [loadMore, setLoadMore] = useState(8);
+  const [loadMore, setLoadMore] = useState(6);
 
   const searchCountry = (value) => {
     setSearchWord(value);
@@ -45,24 +45,19 @@ function App() {
       {countries && currencies ? (
         <React.Fragment>
           <Searchbar value={searchWord} searchCountry={searchCountry} />
-          {searchResult && (
-            <div className={styles.countryContainer}>
-              {searchResult.slice(0, loadMore).map((
-                country //limited to 8 results at first for cleanliness
-              ) => (
-                <Country
-                  key={country.name}
-                  sek={currencies.rates ? currencies.rates.SEK : 10.62} //get the rate for sek
-                  country={country}
-                  //use country-code to find its currency in currency object
-                  countryCurrency={
-                    currencies.rates[country?.currencies[0]?.code]
-                  }
-                />
-              ))}
-            </div>
-          )}
-
+          <div className={styles.countryContainer}>
+            {searchResult.slice(0, loadMore).map((
+              country //limited to 8 results at first for cleanliness
+            ) => (
+              <Country
+                key={country.name}
+                sek={currencies.rates ? currencies.rates.SEK : 10.62} //get the rate for sek
+                country={country}
+                //use country-code to find its currency in currency object
+                countryCurrency={currencies.rates[country?.currencies[0]?.code]}
+              />
+            ))}
+          </div>
           <button
             className={styles.showMore}
             //add 8 more results, could do a separate func for this, but felt redundant

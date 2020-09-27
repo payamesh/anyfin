@@ -1,0 +1,37 @@
+.country {
+    background: #3b445c;
+    padding: 20px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.country:hover {
+    background: #616d8b;
+}
+
+.countryHeader {
+    color: #ebeeff;
+    font-size: 20px;
+    text-align: center;
+}
+
+.country>p {
+    color: #b2bbd5;
+    margin: 8px 0px;
+    font-size: 12px;
+    line-height: 19px;
+    text-align: left;
+}
+
+@media (max-width: 1024px) {
+    .country {
+        padding: 15px;
+        height: auto;
+        width: 100%;
+
+    }
+}

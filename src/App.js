@@ -21,7 +21,7 @@ function App() {
       });
 
     fetch(
-      "http://data.fixer.io/api/latest?access_key=b872f3b7a4fefeb94a3a03e1a9896258"
+      "https://data.fixer.io/api/latest?access_key=b872f3b7a4fefeb94a3a03e1a9896258"
     ) //since I wasnt able to use "&base=SEK" without paying for the API, I convert it in Country.js
       .then((res) => res.json())
       .then((data) => {
